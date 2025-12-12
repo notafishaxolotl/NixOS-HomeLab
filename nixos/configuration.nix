@@ -14,6 +14,8 @@
  # Enable NetworkManager for device/network management
   networking.networkmanager.enable = true;
 
+  hardware.bluetooth.enable = true;
+
   # Set system timezone
   time.timeZone = "Europe/London";
 
@@ -56,7 +58,19 @@
     viAlias = true;
   };
 
-  hardware.bluetooth.enable = true;
+  environment.systemPackages = with pkgs; [
+    git
+    superfile
+    wget
+    fastfetch
+    trashy
+    home-manager 
+    bluetui
+    direnv
+    clang
+    gcc
+  ];
+
 
   fonts.packages = with pkgs; [
     dina-font

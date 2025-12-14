@@ -1,7 +1,11 @@
 {config, pkgs, ... }:
 
 {
-  services.jellyfin.enable = true;
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
+  };
+
   environment.systemPackages = [
     pkgs.jellyfin
     pkgs.jellyfin-web

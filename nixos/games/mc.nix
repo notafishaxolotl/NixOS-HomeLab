@@ -8,17 +8,16 @@
   declarative = true;
   whitelist = {
     # This is a mapping from Minecraft usernames to UUIDs. You can use https://mcuuid.net/ to get a Minecraft UUID for a username
-    username1 = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
-    username2 = "yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy";
+    xr_lynx = "b55d65b2-3aea-4a29-968c-0a405b5a9d26";
   };
   serverProperties = {
     server-port = 43000;
     difficulty = 3;
     gamemode = 1;
     max-players = 5;
-    motd = "NixOS Minecraft server!";
+    motd = "WuluH";
     white-list = true;
-    allow-cheats = true;
+    allow-cheats = false;
   };
   jvmOpts = "-Xms2048M -Xmx4096M";
 };

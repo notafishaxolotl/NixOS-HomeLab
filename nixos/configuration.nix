@@ -11,6 +11,14 @@
     ./media/jelly.nix
   ];
 
+   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    loader = {
+      efi.canTouchEfiVariables = true;
+      systemd-boot.enable = true;
+    };
+  };
+
   # Hostname for this system
   networking.hostName = "Nix";
  # Enable NetworkManager for device/network management

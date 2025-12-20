@@ -12,17 +12,17 @@
   ];
 
    boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot.enable = true;
     };
   };
 
-  # Hostname for this system
-  networking.hostName = "Nix";
- # Enable NetworkManager for device/network management
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "Nix";
+    networkmanager.enable = true;
+  };
 
   hardware.bluetooth.enable = true;
 
@@ -55,11 +55,12 @@
   users.users.wuluh = {
     isNormalUser = true;
     description = "Wuluh";
-    extraGroups = [ "networkmanager" "wheel" "dialout" ]; # Network admin and sudo
+    extraGroups = [ "networkmanager" "wheel" "dialout" "docker" ];
     packages = with pkgs; [];
+    home = "/home/wuluh";
+    shell = pkgs.zsh;
   };
 
-  # Experimental Nix features
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -67,7 +68,6 @@
     "auto-allocate-uids"
   ];
 
-  #neovim
   programs.neovim = {
     defaultEditor = true;
     enable = true;

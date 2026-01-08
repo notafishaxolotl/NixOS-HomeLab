@@ -88,6 +88,7 @@
     direnv
     clang
     gcc
+    nodejs
   ];
 
 

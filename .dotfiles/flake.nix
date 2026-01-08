@@ -8,7 +8,7 @@
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
-  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, nix-minecraft, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";

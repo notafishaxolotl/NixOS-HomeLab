@@ -7,7 +7,6 @@
     ./drives.nix
     ./unstable.nix
     ./zsh.nix
-    ./games/mc.nix
     ./media/jelly.nix
     ./web/manager.nix
   ];

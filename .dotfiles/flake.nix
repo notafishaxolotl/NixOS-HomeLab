@@ -20,6 +20,9 @@
         inherit system; 
         modules = [ 
           ./nixos/configuration.nix
+          ./minecraft.nix
+          nix-minecraft.nixosModules.minecraft-servers
+          { nixpkgs.overlays = [ inputs.nix-minecraft.overlay ]; }
         ];
         specialArgs = {
           pkgs-unstable = nixpkgs-unstable.legacyPackages.${pkgs.system};

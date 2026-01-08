@@ -1,6 +1,11 @@
 { config, pkgs, lib, ... }:
 
 {
+
+  imports = [
+    mods.nix
+  ];
+
   services.minecraft-servers = {
     enable = true;
     eula = true;
